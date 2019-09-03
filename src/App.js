@@ -23,26 +23,30 @@ const todoData =[
     super(props);
     this.state = {
       todos: todoData,
-      newTodo: '', 
-      doneTodo: '',
-      todoInput: ''
     };
 }
   // design `App` to be the parent component of your application.
   // this component is going to take care of state, and any change handlers you need to work with your state
 
-handleInputChange = event => {
-  this.setState({todoInput: event.target.value})
-  console.log(event.target.value)
+
+
+addTodo = taskName => {
+  const newItem = {
+    task: taskName,
+    id: Date.now(),
+    completed: false
+  };
+  this.setState({
+    todos: [...this.state.todos, newItem]
+  });
+  console.log(this.state)
+};
+ 
+handleNewTask = event => {
+  event.preventDefault();
+  this.addTodo(this.state.todos.task)
  }
  
-handleNewTodoClick = event => {
-  event.preventDefault();
-  this.setState({newTodo: event.target.value})
-  console.log('clicked')
-  console.log(this.state)
-}
-
 handleTodoDoneClick = event => {
   event.preventDefault();
   this.setState({doneTodo: event.target.value})
@@ -74,8 +78,11 @@ toggleItem = id => {
         toggleItem={this.toggleItem}        
         /></h2>
               
-        <TodoForm writeTodo={this.handleInputChange} submitNewTodo={this.handleNewTodoClick}
-        clearTodo={this.handleTodoDoneClick}/>
+        <TodoForm
+        clearTodo={this.handleTodoDoneClick}
+        addTodo={this.addTodo}
+        />
+        
       </div>
     );
   }
