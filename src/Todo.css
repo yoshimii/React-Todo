@@ -1,0 +1,85 @@
+* {
+    box-sizing: border-box;
+}
+html {
+    background-image: url('https://i.imgur.com/5WNO5na.jpg');
+    background-size: 120%;
+    background-repeat: no-repeat;
+}
+body {
+    margin: auto;
+
+}
+
+.root {
+    min-height: 100%;
+}
+.App {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin: 5% auto;
+    width: 450px;
+    border-radius: 4px;
+    background-color: #ce491c;
+    font-family: 'Nanum Pen Script', cursive;
+    text-align: center;
+    min-height: 500px;
+    color: #272727
+}
+
+h1 {
+    font-size: 3rem;
+}
+
+p {
+    font-size: 2rem;
+}
+.todo-items {
+    min-height: 350px;
+    background-color: #cafbff;
+}
+.todo-completed {
+    text-decoration: line-through;
+}
+
+button {
+    border-radius: 10px;
+    border: 0;
+    padding: 0;
+    background: #c59b79;
+    color: white;
+    font-family: inherit;
+    font-size: 1.3rem;
+    cursor: pointer;
+    height: 3rem;
+    width: 8rem;
+    margin: 1%;
+    line-height: 1rem;
+}
+
+.clear-task {
+    overflow-wrap: normal;
+}
+
+form {
+    display: flex;
+    justify-content: space-around;
+}
+
+input {
+    background-color: #def3f6;
+    border-radius: 10px;
+    margin: 1%;
+    border-style: none;
+    padding: 2%;   
+}
+
+input::placeholder {
+    font-family: 'Nanum Pen Script', cursive;
+    font-size: 1.3rem;
+}
+
+span {
+    font-size: 1rem;
+}
